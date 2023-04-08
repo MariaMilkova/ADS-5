@@ -1,4 +1,7 @@
 // Copyright 2021 NNTU-CS
+
+#include <iostream>
+
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
 
@@ -7,8 +10,11 @@ class TStack {
  private:
     T arr[size];
     int top;
+
  public:
-    Tstack():top(-1) {}
+    TStack() {
+        top = -1;
+    }
     bool isFull() const {
         return top == size;
     }
@@ -25,7 +31,7 @@ class TStack {
     T pop() {
         if (isEmpty()) {
             std::cout << "Stack is Empty!" << "\n";
-            
+            return -1;
         } else {
             return arr[top--];
         }
@@ -33,7 +39,7 @@ class TStack {
     T get() {
         if (isEmpty()) {
             std::cout << "Stack is Empty!" << "\n";
-            
+            return -1;
         } else {
             return arr[top];
         }
