@@ -8,11 +8,12 @@
 template<typename T, int size>
 class TStack {
  private:
-    T arr[size];
+    T *arr;
     int top;
 
  public:
     TStack() {
+        arr = new T[size];
         top = -1;
     }
     bool isFull() const {
